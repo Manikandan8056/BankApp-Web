@@ -16,19 +16,13 @@ public class UserDAO {
         pst.setString(1, email);
         pst.setString(2, password);
         ResultSet rs=pst.executeQuery();
-        
-        String mailId="";
-        String pwd="";
+      
         if(rs.next()) {
-        	mailId=rs.getString("email");
-        	pwd=rs.getString("password");
-        }
-        
-        if(email.equals(mailId) && pwd.equals(pwd)) {
         	isValidLogin= true;
         }
         
         return isValidLogin;
     }
+
 	
 }
